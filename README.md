@@ -3,4 +3,5 @@
 
 ## 试验记录
 ### example1: 数组中的1[a]表达居然也可以？ 
-### example1: 类的继承小实验？ 
+### example2: 类的继承小实验？ 
+### example3: 如何遍历文件夹下的文件（windows下的api）？ 
