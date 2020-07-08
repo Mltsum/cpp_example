@@ -6,4 +6,5 @@
 ### example2: 类的继承小实验？ 
 ### example3: 如何遍历文件夹下的文件（windows下的api）？ 
 ### example4: 使用智能指针申请一段内存？ 
-### example4: 使用std::find()判断子串？
+### example5: 使用std::find()判断子串？
+### example6: 初步使用静态强制转换和动态强制转换。
