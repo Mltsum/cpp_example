@@ -10,3 +10,4 @@
 ### example6: 初步使用静态强制转换和动态强制转换。
 ### example7: 操作符重载
 ### example8: 宏定义尽量用const替换define
+### example9: 类成员的方法的const修饰
