@@ -12,3 +12,4 @@
 ### example8: 宏定义尽量用const替换define
 ### example9: 类成员的方法的const修饰
 ### example10: pair的作用
+### example11: c++构造函数中的=default和=delete
