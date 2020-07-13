@@ -9,3 +9,4 @@
 ### example5: 使用std::find()判断子串？
 ### example6: 初步使用静态强制转换和动态强制转换。
 ### example7: 操作符重载
+### example8: 宏定义尽量用const替换define
