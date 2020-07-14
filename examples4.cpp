@@ -20,7 +20,7 @@ int main(){
     /*
      * 申请固定长度数组内存
      */
-    std::unique_ptr<float[]> float_ptr(new float[10]);
+    std::unique_ptr<float> float_ptr(new float[10]);
     for (int i = 0; i < 10; ++i) {
         float_ptr[i] = i;
         cout << float_ptr[i] << " " << endl;
