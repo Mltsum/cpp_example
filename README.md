@@ -14,3 +14,4 @@
 ### example10: pair的作用
 ### example11: c++构造函数中的=default和=delete
 ### example12: c++中的%d %ld(%Id) %lld(%I32d)
+### example13: for循环中的j++和++j其实是一样的
