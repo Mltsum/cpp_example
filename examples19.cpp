@@ -9,6 +9,7 @@
 
 /*
  *  遍历map
+ *  通过Key取value
  */
 
 using namespace  std;
@@ -31,6 +32,13 @@ int main () {
     for(auto it = mapV.begin(); it != mapV.end(); it++){
         cout << it->first << endl;
         cout << it->second << endl;
+    }
+
+    /*
+     * map 通过Key取value
+     */
+    for(int i = 0; i < mapV.size(); i++){
+        cout << mapV[i] << endl;
     }
 
     return 0;
