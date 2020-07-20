@@ -18,4 +18,5 @@
 ### example14: map的使用：赋值 
 ### example15: sort中自定义比较函数
 ### example16: min, max函数的输入参数必须一致，编译器不会做自动转换  
-### example17: map的insert和find  
+### example17: map的insert和find
+### example18: 文件的按行读取和行分割  
