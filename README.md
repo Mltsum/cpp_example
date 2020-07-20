@@ -16,3 +16,5 @@
 ### example12: c++中的%d %ld(%Id) %lld(%I32d)
 ### example13: for循环中的j++和++j其实是一样的
 ### example14: map的使用：赋值 
+### example15: sort中自定义比较函数
+### example16: min, max函数的输入参数必须一致，编译器不会做自动转换  
