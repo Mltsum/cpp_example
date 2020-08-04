@@ -22,3 +22,12 @@
 ### example18: 文件的按行读取和行分割
 ### example19: map的遍历，map通过key取value  
 ### example20: 如何合并两个vector?
+### example21: 字符串长度：str.size()或者str.lenth()
+### example22: 变长数组的使用
+### example23: vector可以用来封装pair,并进行key和value的索引
+### example24: c++11不能用变量来定义数组
+### example25: 如何清除字符数组中的字符？Memset
+### example26: map的value可以用来存放指针
+### example27: sort，map时中相同值时的顺序(按原来的顺序存储)
+### example28: map如果索引不到，会返回nullptr 
+### example29: 前置声明
