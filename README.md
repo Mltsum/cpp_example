@@ -31,3 +31,5 @@
 ### example27: sort，map时中相同值时的顺序(按原来的顺序存储)
 ### example28: map如果索引不到，会返回nullptr 
 ### example29: 前置声明
+### example30：文件的读写
+### example31：string的compare?
