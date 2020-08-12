@@ -33,4 +33,5 @@
 ### example29: 前置声明
 ### example30：文件的读写
 ### example31：string的compare?
-### example32：c++中判断文件存在并删除它
+### example32：c++中判断文件存在并删除它？
+### example33：char可以直接赋值给string.
