@@ -39,3 +39,4 @@
 ### example35: class的赋值(直接赋值)以及vector的赋值容易踩的坑
 ### example36: 震惊！二维array的初始化：{(),()}
 ### example37: error: undefined reference to 'vtable for DetectionProcess' 接口实现注意事项
+### example38: for 循环，改变值？ 关于for(auto e : v) 是否需要用引用的问题
