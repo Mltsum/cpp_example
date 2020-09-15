@@ -38,3 +38,4 @@
 ### example34: 类中的属性是定义成public还是private，取决于类外是否会使用该属性
 ### example35: class的赋值(直接赋值)以及vector的赋值容易踩的坑
 ### example36: 震惊！二维array的初始化：{(),()}
+### example37: error: undefined reference to 'vtable for DetectionProcess' 接口实现注意事项
