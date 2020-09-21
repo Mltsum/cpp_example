@@ -42,3 +42,4 @@
 ### example38: for 循环，改变值？ 关于for(auto e : v) 是否需要用引用的问题
 ### example39: 智能指针申请一段内存的方法
 ### example40: 构造函数参数错误（或者类中属性的类构造函数实现有问题），会出现implicitly-deleted default constructor
+### example41: 类中的属性，声明的类指针只是一个空指针，需要在构造函数中new出实体，才能正常使用
