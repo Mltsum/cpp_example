@@ -56,3 +56,4 @@
 ### example52: cpp 能否用默认形参？？？ 当然可以
 ### example53: 类作为base类的属性时，用指针和直接对象化的用法和注意事项
 ### example54: 判断元素是否在set内部
+### example55: memcpy和memccpy的区别及使用注意事项
