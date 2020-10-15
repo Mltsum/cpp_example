@@ -57,3 +57,4 @@
 ### example53: 类作为base类的属性时，用指针和直接对象化的用法和注意事项
 ### example54: 判断元素是否在set内部
 ### example55: memcpy和memccpy的区别及使用注意事项
+### example56: free()失败，出现segment fault.
