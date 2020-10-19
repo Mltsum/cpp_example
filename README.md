@@ -58,3 +58,4 @@
 ### example54: 判断元素是否在set内部
 ### example55: memcpy和memccpy的区别及使用注意事项
 ### example56: free()失败，出现segment fault.
+### example57: 类中实例话的对象会在类析构时析构
