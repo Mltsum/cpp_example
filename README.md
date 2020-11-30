@@ -60,3 +60,4 @@
 ### example56: free()失败，出现segment fault.
 ### example57: 类中实例话的对象会在类析构时析构
 ### example58: malloc后delete和free的后果
+### example59: 如何将浮点数只保留后5位？
