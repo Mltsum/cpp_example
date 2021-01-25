@@ -61,3 +61,5 @@
 ### example57: 类中实例话的对象会在类析构时析构
 ### example58: malloc后delete和free的后果
 ### example59: 如何将浮点数只保留后5位？
+### example60: 单例模式
+### example61: 函数模版是可以多参数的
