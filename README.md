@@ -63,3 +63,5 @@
 ### example59: 如何将浮点数只保留后5位？
 ### example60: 单例模式
 ### example61: 函数模版是可以多参数的
+### example62: 类中的静态变量和静态函数
+### example63: split 分割字符串
