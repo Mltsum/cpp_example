@@ -70,3 +70,5 @@
 ### example67: 函数默认参数
 ### example68: Eigen矩阵库的基本操作
 ### example69: 遍历文件夹下的所有文件
+### example70: 容易错误理解的循环
+### example71: accumulate的类型取决于初始值的类型,要注意
