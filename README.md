@@ -74,3 +74,4 @@
 ### example71: accumulate的类型取决于初始值的类型,要注意
 ### example72: for需要改值记得用引用
 ### example73: Eigen的基本操作实验
+### example75: c++中的可替代关键词
