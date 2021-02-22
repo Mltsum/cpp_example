@@ -25,6 +25,9 @@ int main(int argc, char **argv) {
     m.insert(make_pair("three", 3));
     m.insert(make_pair("four", 4));
 
+    /**
+     * 需要注意的是, 一旦进行判断, map中会自动加入这个key-value, 其长度由4->5
+     */
     auto i = m["five"];
     cout << i << endl;
 
