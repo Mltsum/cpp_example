@@ -77,3 +77,5 @@
 ### example75: c++中的可替代关键词
 ### example76: map中key如果不存在,通过key检索值时会返回默认值
 ### example77: python默认深拷贝
+### example78: *& 指针引用的性质
+### example79: 拷贝构造函数的深拷贝和浅拷贝
