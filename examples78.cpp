@@ -11,46 +11,32 @@ using namespace std;
 using namespace Eigen;
 
 /*
- *  拷贝构造函数能实现默认深拷贝？
+ *  可以通过重载 =  实现类的赋值浅拷贝？
  */
-
-class CA {
-public:
-    CA() : a(10) {}
-    /**
-     * 通过使用另一个同类型的对象来初始化新创建的对象。
-     * 复制对象把它作为参数传递给函数。
-     * 复制对象，并从函数返回这个对象。
-     *
-     * 注意: 默认的拷贝构造函数是不对指针进行赋值的，因此如果类中有指针要在拷贝构造函数中额外处理
-     * @param b
-     */
-    CA(const CA &c) {
-        // 拷贝地址，地址相同，深拷贝可能会导致crash
-        //        this->ptr = c.ptr;
-        // 拷贝地址，地址相同，浅拷贝
-        this->ptr = new int();
-        *this->ptr = *c.ptr;
-    }
-    void setb(int b) { this->b = b; }
-    void setPtr(int *p) { this->ptr = p; }
-
-private:
-    int  a;
-    int  b;
-    int *ptr;
-};
-
 int main(int argc, char **argv) {
-    CA   ca1;
-    int  a = 1;
-    int *p = &a;
-    ca1.setb(11);
-    ca1.setPtr(p);
-    cout << "ca1 address : " << &ca1 << endl;
+    int a = 1;
+    int b = 2;
+    int c = 1;
+    int d = 2;
 
-    CA ca2 = ca1;
-    cout << "ca2 address : " << &ca2 << endl;
+    cout << &a << endl;
+    cout << &b << endl;
+    cout << &c << endl;
+    cout << &d << endl;
+
+    vector<int> v;
+    // emplace_back() 在实现时，则是直接在容器尾部创建这个元素，省去了拷贝或移动元素的过程
+    v.emplace_back(a);
+    v.emplace_back(b);
+    // push_back()
+    // 向容器尾部添加元素时，首先会创建这个元素，然后再将这个元素拷贝或者移动到容器中（如果是拷贝的话，事后会自行销毁先前创建的这个元素）
+    v.push_back(c);
+    v.push_back(d);
+
+    cout << &v[0] << endl;
+    cout << &v[1] << endl;
+    cout << &v[2] << endl;
+    cout << &v[3] << endl;
 
     return 0;
 }
