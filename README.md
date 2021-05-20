@@ -87,3 +87,4 @@
 ### example92: lambda函数及静态变量的构造是在main函数之前
 ### example93: constexpr的应用
 ### example94: sprintf 会覆盖
+### example95: 回调的实现
