@@ -88,3 +88,5 @@
 ### example93: constexpr的应用
 ### example94: sprintf 会覆盖
 ### example95: 回调的实现
+### example96: make_shared实力话private的构造
+### example97: shared_ptr的理解
