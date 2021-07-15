@@ -1,0 +1,212 @@
+#Style options please see https:  // clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+---
+Language:        Cpp
+BasedOnStyle:  Google
+#The extra indent or outdent of access modifiers，e.g.public
+AccessModifierOffset: -4
+#括号中的参数是否需要对齐
+AlignAfterOpenBracket: Align
+#连续的赋值语句是否需要在 '='处对齐
+AlignConsecutiveAssignments: false
+#连续声明的变更是否需要对齐
+AlignConsecutiveDeclarations: true
+#Options for aligning backslashes in escaped newlines
+AlignEscapedNewlines: Left
+#操作数及三元操作符对齐
+AlignOperands: true
+#注释对齐
+AlignTrailingComments: true
+#函数声明过长时是否每个参数作为一行处理
+AllowAllParametersOfDeclarationOnNextLine: true
+#Allows contracting simple braced statements to a single line
+AllowShortBlocksOnASingleLine: false
+#case关键字是否与语句放在一行
+AllowShortCaseLabelsOnASingleLine: false
+#单语句或短函数是否可以放在一行
+AllowShortFunctionsOnASingleLine: Inline
+#IF 单语句代码是否可以放在一行
+AllowShortIfStatementsOnASingleLine: true
+#单语句循环体是否可以与循环放在一行
+AllowShortLoopsOnASingleLine: true
+#AlwaysBreakAfterDefinitionReturnType 选项将被弃用
+AlwaysBreakAfterDefinitionReturnType: None
+#The function declaration return type breaking style to use
+AlwaysBreakAfterReturnType: None
+#多行字符串是否需要另起一行
+AlwaysBreakBeforeMultilineStrings: true
+#模板声明时是否需要另起一行
+AlwaysBreakTemplateDeclarations: Yes
+#函数调用时参数打包对齐
+BinPackArguments: true
+#函数声明或定义时是否需要参数打包对齐
+BinPackParameters: false
+#大括号的处理行为
+BraceWrapping:   
+  AfterClass: true
+  AfterControlStatement: false
+  AfterEnum: false
+  AfterFunction: true
+  AfterNamespace: false
+  AfterObjCDeclaration: false
+  AfterStruct: true
+  AfterUnion: false
+  AfterExternBlock: false
+  BeforeCatch: false
+  BeforeElse: false
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+#The way to wrap binary operators
+BreakBeforeBinaryOperators: None
+#The brace breaking style to   use
+BreakBeforeBraces: Attach
+BreakBeforeInheritanceComma: false
+#The inheritance list style to use
+BreakInheritanceList: AfterColon
+#三元操作号对齐
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializersBeforeComma: false
+BreakConstructorInitializers: BeforeColon
+BreakAfterJavaFieldAnnotations: false
+#Allow breaking string literals when formatting
+BreakStringLiterals: true
+#允许每行字符最大长度
+ColumnLimit: 120
+CommentPragmas:  '^ IWYU pragma:'
+#是否允许多个namespace声明在同一行
+CompactNamespaces: false
+#If the constructor initializers don’t fit on a line，put each initializer on its own line
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+#The number of characters to use for indentation of constructor initializer lists as well as inheritance lists
+ConstructorInitializerIndentWidth: 4
+#Indent width for line continuations
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+DerivePointerAlignment: true
+#禁止代码格式化
+DisableFormat: false
+ExperimentalAutoDetectBinPacking: false
+#是否自动添加namespace结束的注释
+FixNamespaceComments: true
+ForEachMacros:   
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+#Dependent on the value，multiple #include blocks can be sorted as one and divided based on category
+IncludeBlocks:   Preserve
+#Regular expressions denoting the different #include categories used for ordering #includes
+IncludeCategories: 
+  - Regex:           '^<ext/.*\.h>'
+    Priority: 2
+  - Regex:           '^<.*\.h>'
+    Priority: 1
+  - Regex:           '^<.*'
+    Priority: 2
+  - Regex:           '.*'
+    Priority: 3
+IncludeIsMainRegex: '([-_
+](test|unittest))?$'
+#The number of columns to use for indentation
+IndentWidth: 4
+#case关键字是否需要缩进
+IndentCaseLabels: true
+#预处理指定或宏是否需要缩进
+IndentPPDirectives: None
+#当函数声明的返回值与函数名不在一行时，函数名是否需要缩进
+IndentWrappedFunctionNames: false
+JavaScriptQuotes: Leave
+JavaScriptWrapImports: true
+#是否在代码段前添加空格
+KeepEmptyLinesAtTheStartOfBlocks: false
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+#允许最大的空行数量
+MaxEmptyLinesToKeep: 1
+#namespace中的子namespace与代码是否需要缩进
+NamespaceIndentation: None
+ObjCBinPackProtocolList: Never
+ObjCBlockIndentWidth: 2
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: true
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 1000000
+#函数允许的最大长度(行)
+PenaltyReturnTypeOnItsOwnLine: 200
+#指针与引用的对齐方式
+PointerAlignment: Left
+#Defines hints for detecting supported languages code blocks in raw strings
+RawStringFormats: 
+  - Language:        Cpp
+    Delimiters:      
+      - cc
+      - CC
+      - cpp
+      - Cpp
+      - CPP
+      - 'c++'
+      - 'C++'
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+  - Language:        TextProto
+    Delimiters:      
+      - pb
+      - PB
+      - proto
+      - PROTO
+    EnclosingFunctions: 
+      - EqualsProto
+      - EquivToProto
+      - PARSE_PARTIAL_TEXT_PROTO
+      - PARSE_TEST_PROTO
+      - PARSE_TEXT_PROTO
+      - ParseTextOrDie
+      - ParseTextProtoOrDie
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+#是否对注释重新排列
+ReflowComments: true
+#是否对 #include 的头文件进行排序
+SortIncludes: true
+#是否对using的namespace排序
+SortUsingDeclarations: true
+#C语言风格的类型转换的变量前是否添加空格
+SpaceAfterCStyleCast: false
+#模板关键字后是否需要添加空格
+SpaceAfterTemplateKeyword: true
+#赋值操作符前否是否需要添加空格
+SpaceBeforeAssignmentOperators: true
+#C11风格的对象初始化是否需要添加空格
+SpaceBeforeCpp11BracedList: true
+#成员初始化列表的冒号前是否需要添加空格
+SpaceBeforeCtorInitializerColon: true
+#类继承时冒号前是否添加空格
+SpaceBeforeInheritanceColon: true
+#圆括号前后是否要添加空格
+SpaceBeforeParens: ControlStatements
+#range - based的循环中的冒号( :) 前是否添加空格
+SpaceBeforeRangeBasedForLoopColon: true
+#空括号() 中是否需要添加空格
+SpaceInEmptyParentheses: false
+#行注释前需要添加的空格数量
+SpacesBeforeTrailingComments: 2
+# <> 中是否需要添加空格
+SpacesInAngles: false
+#容器列表中是否需要添加空格
+SpacesInContainerLiterals: true
+#C语言风格的类型转换时() 中是否需要添加空格
+SpacesInCStyleCastParentheses: false
+#() 中是否需要添加空格
+SpacesInParentheses: false
+#[] 中是否需要添加空格
+SpacesInSquareBrackets: false
+#自动识别C++ 标准版本
+Standard:        Auto
+UseTab:          Never
+...
