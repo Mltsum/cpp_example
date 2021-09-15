@@ -19,8 +19,10 @@ public:
 };
 
 int main(int argc, const char *argv[]) {
-    Xiaoming *xiaoming = new Xiaoming();
-
+ /**
+  * 指针转智能指针
+  */
+ Xiaoming *xiaoming = new Xiaoming();
     {
         PL;
         // 这行代码在堆里创建了两块内存：1.存储T。2.用于引用计数的内存，管理附加此内存的shared_ptr对象的计数，最初计数将为1.
@@ -38,5 +40,10 @@ int main(int argc, const char *argv[]) {
         PL;
     }
 
+    /**
+     * 对象转智能指针
+     */
+    Xiaoming                  xiaomingx;
+    std::shared_ptr<Xiaoming> xiaoPtr = std::make_shared<Xiaoming>(xiaomingx);
     return 0;
 }
