@@ -30,14 +30,17 @@ using namespace std;
  */
  class Observer{
  public:
+     Observer(){}
+     virtual ~Observer(){}      // 基类的析构函数都要设计成虚函数
+
      /**
       * 观察者只需状态更新即可
       */
-     virtual void update(int) = 0;
+     virtual void update(int) = 0;      // 变化的部分
  };
 
 /**
- * 观测对象 : 观测对象内部存有一定量的观察者，它会定期将消息发送给这些观察者，同时可以增删这些观察者。
+ * 发布者 : 发布者内部存有一定量的观察者，当发布者的信息更新时，会将更新消息发送给这些观察者，同时支持增删这些观察者。
  *           目标 ==》 观察者
  * @param argc
  * @param argv
@@ -45,20 +48,23 @@ using namespace std;
  */
  class Subject{
  public:
+     Subject(){}
+     virtual ~Subject(){}       // 基类的析构函数都要设计成虚函数
+
      /**
       * 增加观察者
       */
-     virtual void attach(Observer*) = 0;
+     virtual void attach(Observer*) = 0;        // 变化的部分
 
      /**
       * 删除观察者
       */
-      virtual void detach(Observer*) = 0;
+     virtual void detach(Observer*) = 0;        // 变化的部分
 
       /**
        * 通知观察者
        */
-       virtual void notify() = 0;
+     virtual void notify() = 0;                 // 变化的部分
  };
 
  /**
@@ -104,7 +110,7 @@ private:
 };
 
 /**
- * 具体目标
+ * 发布者实例
  */
 
 class ConcreteSubject : public Subject{
@@ -148,7 +154,7 @@ private:
 
 int main(int argc, const char* argv[]) {
 
-    // 创建目标
+    // 创建发布者
     ConcreteSubject *pSubject = new ConcreteSubject();
 
     // 创建观察者
