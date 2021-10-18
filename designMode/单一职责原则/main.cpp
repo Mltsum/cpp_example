@@ -50,6 +50,16 @@ public:
     std::string cName;
 };
 
+/**
+ * 组合的形式优于继承
+ */
+class D{
+public:
+    A *a;
+    B *b;
+    std::string dName;
+};
+
 int main(int argc, const char* argv[]) {
 
     C *c = new C();
