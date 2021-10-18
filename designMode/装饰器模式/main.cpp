@@ -21,6 +21,7 @@ using namespace std;
  *    创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
  *    主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
  *
+ *    装饰类其实就是组合。
  */
 
 #define CHECK_AND_DELETE(ptr) { if(ptr){delete(ptr); (ptr)=NULL;} }
@@ -30,6 +31,9 @@ using namespace std;
  */
 class CoffeeBean{
 public:
+    CoffeeBean(){}
+    virtual ~CoffeeBean(){}     // 基类的析构函数需声明为虚函数
+
     virtual void showCoffeeName() = 0;
     virtual void showPrice() = 0;
 
@@ -58,7 +62,7 @@ public:
 };
 
 /**
- * 装饰类
+ * 装饰类(装饰类其实就是组合)
  *  保持基类完整性的前提下，扩展出了
  */
 class ExtendCoffee : public CoffeeBean{
@@ -99,6 +103,7 @@ public:
     {
         std::cout << "I am Americano Coffee,Coffee name:" << mPBean->mCoffeeName + " from American" << std::endl;
     }
+
     void ShowPrice()
     {
         mPBean->mPrice = 48;
