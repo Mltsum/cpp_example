@@ -33,17 +33,24 @@ using namespace std;
 class IStrategy{
 public:
     virtual void travel() = 0;
+    IStrategy(){}
+    virtual ~IStrategy(){}      // 任何一个基类应声明为虚函数
 };
 
 class Context{
 public:
-    Context(IStrategy *strategy){ mStrategy = strategy;}
+    Context(IStrategy *strategy = nullptr){ mStrategy = strategy;}
+    Context(){
+        CHECK_AND_DELETE(this->mStrategy)
+    }
 
     void travel(){
         mStrategy->travel();
     };
 
 private:
+    // 应该放置指针，指针才具有多态。 不应该声明为对象
+    // 指针应该被初始化和显示的delete
     IStrategy *mStrategy;
 };
 
