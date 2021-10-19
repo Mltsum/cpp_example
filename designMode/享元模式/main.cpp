@@ -24,6 +24,8 @@ using namespace std;
  *     3、这些对象的状态大部分可以外部化。
  *     4、这些对象可以按照内蕴状态分为很多组，当把外蕴对象从对象中剔除出来时，每一组对象都可以用一个对象来代替。
  *     5、系统不依赖于这些对象身份，这些对象是不可分辨的。
+ *
+ *     模型的输入输出，其实就是享元模式。
  */
 
 #define CHECK_AND_DELETE(ptr) { if(ptr){delete(ptr); (ptr)=NULL;} }
@@ -37,10 +39,10 @@ enum ShapeType
 };
 
 
-class Shape{
+class Shape{                    // 一般这个对象都应该只读，不应该有变化。
 public:
     Shape(){}
-    ~Shape(){}
+    virtual ~Shape(){}          // 基类的析构函数虚声明为虚函数
 
     virtual void addShape(Shape *){}
     virtual bool removeShape(Shape*){ return false;}
@@ -113,7 +115,7 @@ public:
     }
 
     virtual void showInfo() override {
-        std::cout << "ShowInfo in Rectamgle!" << std::endl;
+        std::cout << "ShowInfo in Rectangle!" << std::endl;
         for (auto itr : vectorLine)
         {
             itr->showInfo();
@@ -227,6 +229,9 @@ public:
     }
 
 private:
+    // 核心其实就是这个池子，当池子中有这个对象时，直接返回，当池子中没有这个对象时，则创建。
+    // 另一个核心是:池子中的对象是一个抽象类。
+    // 思维核心是共享
     std::map<ShapeType, Shape*> mShapeMap;
 };
 
