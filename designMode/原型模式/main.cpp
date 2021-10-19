@@ -41,6 +41,8 @@ private:
 
 /**
  * 原型模式
+ * 核心是1) 拷贝构造函数 2) return new ResumeWithClone(*this);
+ * 当对象比较复杂时，clone可以克隆出当前对象的当前状态！！！, 相当于对对象实现一个当前时间点的快照。
  */
 class ResumeWithClone{
 public:

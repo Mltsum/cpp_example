@@ -72,6 +72,7 @@ public:
 
 /**
  * 工厂方法模式的工厂
+ * 类抽象接口 + 创造此类的工厂
  */
  class FactoryWithMethod{
  public:
