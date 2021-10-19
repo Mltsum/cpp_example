@@ -211,7 +211,5 @@ int main(int argc, const char* argv[]) {
 //    factory.setAssemble(aXiaomi);
 //    factory.getMachine()->showMachineInfo();
 
-
-
     return 0;
 }
