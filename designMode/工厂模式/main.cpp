@@ -19,8 +19,9 @@ using namespace std;
  * 设计模式之工厂模式
  * 简单工厂模式
  *    对不同类对象的创建进行了封装。该模式通过向工厂传入类来指定要创建的对象
+ *
  * 工厂方法模式
- *    将创建对象的能力交给子工厂，方便扩展。
+ *    将创建对象的能力交给子工厂，方便扩展。【主要目的是方便扩展而非修改】
  */
 
 using namespace std;
@@ -32,6 +33,9 @@ using namespace std;
  */
 class Product{
 public:
+    Product(){}
+    virtual ~Product(){}
+
     virtual void show() = 0;
 };
 
@@ -74,7 +78,7 @@ public:
      /**
       * 定义一个接口，让子类决定实例化哪个类
       */
-     virtual Product* create() = 0;
+     virtual Product* create() = 0;     // 虚函数是运行时依赖， 将操作延迟到运行时
  };
 
  class FactoryWithMethodA : public FactoryWithMethod{
@@ -99,8 +103,15 @@ public:
  */
 int main(int argc, const char* argv[]) {
 
+    // 遵循面向接口编程: 变量要声明成抽象基类
+    // 遵循依赖倒置原则: 编译时依赖依赖抽象而不是实现细节
+    Product *product;               // 面向接口
+    product = new ProductA();       // 依赖实现细节; =>通过对象创建来绕开new，来避免new倒置的紧耦合。
+    ProductA productA;              // 依赖实现细节；=》倒置了紧耦合
+
     /**
      * 简单工厂模式
+     * 其实没有将高层代码依赖抽象。编译时还是会直接依赖ProductA和ProductB, 没有实现松耦合
      */
     Factory *factory = new Factory();
     factory->Create(1)->show();
@@ -108,6 +119,8 @@ int main(int argc, const char* argv[]) {
 
     /**
      * 工厂方法模式
+     * 创建一个用于创建对象的接口，让子类决定去实例化哪个类。其中子类是可以扩展的。
+     * 扩展用法: 增加扩展类，然后将扩展类传入即可。
      */
     FactoryWithMethodA *factoryWithMethodA = new FactoryWithMethodA();
     FactoryWithMethodB *factoryWithMethodB = new FactoryWithMethodB();
