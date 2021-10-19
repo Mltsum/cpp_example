@@ -20,6 +20,10 @@ using namespace std;
  * 主要解决：对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。
  * 何时使用：多个类相互耦合，形成了网状结构。
  * 如何解决：将上述网状结构分离为星型结构。
+ *
+ * 编译时依赖转换为运行时依赖。
+ *
+ * 多态是大部分设计模式的基础。
  */
 
 #define CHECK_AND_DELETE(ptr) { if(ptr){delete(ptr); (ptr)=NULL;} }
@@ -38,7 +42,7 @@ public:
     virtual void receiveMsg(std::string &msg) = 0;
 
 protected:
-    Mediator* mMediator;
+    Mediator* mMediator;        // 各个Object必须绑定一个中介者。 这个中介最好显示的绑定。
 };
 
 /**
@@ -56,7 +60,7 @@ public:
         mObject->receiveMsg(msg);
     }
 private:
-    Object *mObject;
+    Object *mObject;       // 其中中介要实现各个Object的联系，必须要有一个指针来实现动态绑定。
 };
 
 /**

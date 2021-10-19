@@ -18,6 +18,13 @@ using namespace std;
 /**
  * 设计模式之状态模式
  *    允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类。
+ *
+ *    好处其实是方便扩展。 当有新的状态需要添加时，直接扩展类和增加状态设置代码即可。 目的是遵循开放封闭原则，便于扩展。
+ *
+ *    和策略模式是非常相似。使得状态转换非常明确。 可以设置状态机。
+ *
+ *    模式其实只是一种思想，并不是一种固定死的套路。重要的是背后的思想。
+ *
  */
 
 #define CHECK_AND_DELETE(ptr) { if(ptr){delete(ptr); (ptr)=NULL;} }
@@ -28,6 +35,7 @@ using namespace std;
 class Status{
 public:
     Status(){}
+    virtual ~Status(){}
     virtual void showStepTip() = 0;
 };
 
@@ -99,6 +107,20 @@ public:
 };
 
 /**
+ * [新增] 回家状态
+ */
+class GohomeStatus :public Status
+{
+public:
+    GohomeStatus() {}
+
+    void showStepTip() override
+    {
+        std::cout << "Step6: 老子要回家！" << std::endl;
+    }
+};
+
+/**
  * 状态管理类
  */
 class StatusManager{
@@ -140,6 +162,11 @@ int main(int argc, const char* argv[]) {
 
     CarOutStatus *carOutStatus = new CarOutStatus();
     statusManager->setStatus(carOutStatus);
+    statusManager->showCurTip();
+
+    // [当新增状态时, 需要新增的代码]  非常符合开放封闭原则
+    GohomeStatus *gohomeStatus = new GohomeStatus();
+    statusManager->setStatus(gohomeStatus);
     statusManager->showCurTip();
 
    return 0;
