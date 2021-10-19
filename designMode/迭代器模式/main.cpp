@@ -26,6 +26,8 @@ using namespace std;
  *
  * 缺点:
  *    增加了类的个数，这在一定程度上增加了系统的复杂性。
+ *
+ * 学习思想，但实现已经过时。
  */
 
 
@@ -34,12 +36,12 @@ using namespace std;
 /**
  * 迭代器的基类
  */
-class Iterator {
+class Iterator {                        // 迭代器模式的核心是构造一个迭代器。并实现迭代器中的first，current, next, end操作。
 public:
     Iterator(){}
-    ~Iterator(){}
+    virtual ~Iterator(){}
 
-    virtual std::string first() = 0;
+    virtual std::string first() = 0;        // 核心是多态。
     virtual std::string next() = 0;
     virtual std::string current() = 0;
     virtual bool isEnd() = 0;
@@ -51,7 +53,7 @@ public:
 class Object{
 public:
     Object(){}
-    ~Object(){}
+    virtual ~Object(){}
 
     virtual Iterator* createIterator() = 0;
     virtual int count() = 0;
