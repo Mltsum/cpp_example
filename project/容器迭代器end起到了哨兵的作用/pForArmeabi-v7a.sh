@@ -1,0 +1,1 @@
+adb push build/cppDemo /data/local/tmp
