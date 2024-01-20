@@ -37,7 +37,7 @@ public:
         cout << "==>构造 = " << cons << endl;
     };
 
-    LaneContour(const LaneContour &obj) {
+    LaneContour(const LaneContour &obj) {       // 使用引用的原因是方式防止赋值递归调用。 加const：如果在函数中不会改变引用类型参数的值，加不加const的效果是一样的。而且不加const，编译器也不会报错。但是为了整个程序的安全，还是加上const，防止对引用类型参数值的意外修改。
         cons++;
         cout << "==>拷贝构造 = " << cons << endl;
     }

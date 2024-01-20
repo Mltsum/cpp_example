@@ -40,6 +40,7 @@ using namespace std;
  *      有一些函数只是临时用一下，而且业务逻辑也比较的简单，相当于是临时工，就没必要给它定义成一个正常函数。使用临时的匿名函数，可以减轻函数的数量，让代码变的清晰易读。
  */
 
+
 int main(int argc, const char *argv[]) {
     /**
      * 排序中的匿名函数
@@ -53,6 +54,11 @@ int main(int argc, const char *argv[]) {
      */
     std::function<void(int &)> f;
     f = [](int &i) { cout << "hello std::function and lambda function." << endl; };
+
+    // lambda函数的基本表达形式
+    auto xxx = [&](void(int a)) -> int {
+
+    };
 
     return 0;
 }

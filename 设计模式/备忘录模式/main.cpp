@@ -19,7 +19,7 @@ using namespace std;
  * 设计模式之备忘录模式
  *    所谓备忘录模式就是在[不破坏封装]的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态。
  *
- *    目前实现比较小了。
+ *    目前实现比较少了。
  */
 
 #define CHECK_AND_DELETE(ptr) { if(ptr){delete(ptr); (ptr)=NULL;} }

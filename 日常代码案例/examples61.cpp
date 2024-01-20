@@ -12,13 +12,33 @@
  * 函数模版
  * 1）函数模版允许使用多个类型参数，但在template定义部分的每个形参前必须有关键字typename或class.
  *      template<class 数据类型参数标识符1，…，class 数据类型参数标识符n>
+ *      template <typename T, typename S>
  * 2) 在template语句与函数模板定义语句<返回类型>之间不允许有别的语句。
 
+    template<class NameType, class AgeType>
+    class Person
+    {
+    public:
+        Person(NameType name, AgeType age)
+        {
+            this->m_Age = age;
+            this->m_Name = name;
+        }
+
+        void showPerson()
+        {
+            cout << "name: " << this->m_Name << "age: " << this->m_Age << endl;
+        }
+
+        NameType m_Name;
+        AgeType m_Age;
+    };
  */
 
 using namespace std;
 
 template <typename T, typename S>
+//template<class NameType, class AgeType = int> //指定默认参数
 bool keyInMap(T key, std::map<T, S>& m) {
     bool res = false;
     for (auto ele : m) {

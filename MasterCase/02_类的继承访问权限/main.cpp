@@ -78,7 +78,32 @@ public:
 };
 
 
+class A{
+public:
+    int a = 1;
+
+protected:
+    int b = 2;
+
+private:
+    int c = 3;
+};
+
+class Aa : A {
+
+};
+
+class Ab : public A {
+
+};
+
 int main(int argc, const char* argv[]) {
+    /**
+     * 公有继承（public）、保护继承（protected）、私有继承（private）。对于基类中的私有成员，三种继承方式都不可见。以下三种继承是针对除私有成员外，对于公有继承，所有成员的特性不变。对于保护继承，所有成员特性变为保护方式。对于私有继承，所有成员特性变为私有方式。
+     *
+     *    在这里需要注意：使用关键字class时默认的继承方式是private，使用struct时默认的继承方式是public。
+     */
+
     /**
      * 如果是public继承，则在派生类外部只能访问基类的public，在派生类的内部只能访问基类的public和protected.
      */
@@ -100,5 +125,31 @@ int main(int argc, const char* argv[]) {
     PrivateBase prb;
     prb.Print();
 
+
+    /**
+     * 类的继承默认是private继承。(为什么？ 可能是为了语言的安全性吧，如果默认pub,则会带来被篡改危险，默认prv可以将篡改权给到用户)
+     */
+    A a;
+    Aa aa;
+//    std::cout << aa.c << std::endl;     // compile faild
+    Ab ab;
+    std::cout << ab.a << std::endl;
+
+
+    /**
+
+private成员变量：
+    类内可以访问；
+    实例化对象不可以访问，如果想访问，需要在类内定义可以访问的成员函数；
+    派生类不可以访问；
+
+protect成员变量：
+    类内可以访问；
+    实例化对象不可以访问；
+    派生类类内可以访问（三种继承方式都可以在类内访问）；
+
+public成员变量
+    都可以访问；
+     */
     return 0;
 }

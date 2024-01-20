@@ -26,7 +26,7 @@ class Example {
 public:
     void function(Delay_callback callback) {
         std::cout << "call function:" << std::endl;
-        // 执行回掉
+        // 执行回调
         callback(1);
     }
 

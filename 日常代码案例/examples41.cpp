@@ -36,7 +36,7 @@ public:
 
 private:
     DetectionParams *detection_params;      // 其实这里只是声明了一个空指针。 需要new来分配地址
-    DetectionParams detection_params1;      // 最好不要用指针。这样省去了构造和析构函数的new和malloc
+    DetectionParams detection_params1;      // 最好要用指针。
 };
 
 
